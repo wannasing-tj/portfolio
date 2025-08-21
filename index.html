@@ -6,235 +6,187 @@
   <title>권태준의 포트폴리오</title>
 
   <!-- Font Awesome -->
-  <link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-  />
+  <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
 
-  <!-- 메인 스타일 -->
   <link rel="stylesheet" href="css/index.css" />
 </head>
-<body>
-  <!-- TOP NAV: 홈에서만 노출 -->
-  <nav class="navbar" role="navigation" aria-label="주요">
-    <a href="#home" class="logo">권태준의 포트폴리오</a>
-    <ul class="nav-menu">
-      <li><a href="#home">Home</a></li>
-      <li><a href="#profile">Profile</a></li>
-      <li><a href="#skills">Skills</a></li>
-      <li><a href="#projects">Projects</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
-  </nav>
+<body class="theme-sky">
 
-  <!-- SIDE NAV: 홈 이외 구간에서 좌측에 슬라이드 인 -->
-  <aside class="side-nav" aria-label="섹션 내비게이션">
-    <div class="side-nav__wrap">
-      <a href="#profile">Profile</a>
-      <a href="#skills">Skills</a>
-      <a href="#projects">Projects</a>
-      <a href="#contact">Contact</a>
+  <!-- 로딩 장면 -->
+  <div id="loader" aria-hidden="true">
+    <div class="loader-inner">
+      <div class="loader-title">Loading</div>
+      <div class="loader-bar"><span></span></div>
     </div>
-  </aside>
+  </div>
 
-  <!-- HOME -->
-  <header id="home" role="banner">
-    <h1>안녕하세요?</h1>
-    <h2>웹 개발자 <strong>권태준</strong>입니다.</h2>
-    <p>사용자 중심의 애플리케이션 개발에 열정을 가지고 있습니다.</p>
-    <div class="buttons">
-      <a href="#profile" class="btn_01">프로필 보기</a>
-      <a href="#projects" class="btn_02">프로젝트 보기</a>
+  <!-- 가로 스크롤 컨테이너 -->
+  <main id="h-scroll" aria-label="가로 페이지">
+    <!-- HOME -->
+    <header id="home" class="panel section hero" role="banner" data-theme="sky">
+      <div class="hero-giant" aria-hidden="true">The Web</div>
+      <div class="hero-giant hero-giant--2" aria-hidden="true">Developer</div>
+
+      <h1 class="display" data-reveal="title">Kwon Tae Jun</h1>
+      <h2 class="tagline" data-reveal="subtitle"><em>Front-end</em></h2>
+      <p class="lead" data-reveal="desc">
+        사용자를 위한, 사용자에 의한 프론트엔드 개발자 권태준입니다.
+      </p>
+
+      <div class="hero-media" aria-hidden="true">
+        <div class="hero-card"></div>
+      </div>
+    </header>
+
+    <!-- PROFILE -->
+    <section id="profile" class="panel section section-profile" aria-labelledby="profile-title" data-theme="gold">
+      <div class="profile-wrap">
+        <div class="profile-visual" data-reveal="title">
+          <img class="photo-lg" src="img/self.jpg" alt="권태준 프로필 사진(대)" />
+        </div>
+        <div class="profile-side">
+          <img class="photo-sm" src="img/self.jpg" alt="보조 사진" data-reveal="subtitle"/>
+          <h2 id="profile-title" class="stacked" data-reveal="title">
+            <span>Who</span><span>Are</span><span>You?</span>
+          </h2>
+          <p class="profile-desc" data-reveal="desc">
+            사용자 여정을 기준으로 문제를 정의하고, 가볍고 확장 가능한 코드를 추구합니다.
+            대구에 거주하며 React/TypeScript 중심으로 학습·프로젝트를 진행 중입니다.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SKILLS -->
+    <section id="skills" class="panel section section-skills" aria-labelledby="skills-title" data-theme="green">
+      <h2 id="skills-title" class="section-title" data-reveal="title">Skills</h2>
+      <p class="section-sub" data-reveal="subtitle">핵심 역량</p>
+
+      <div class="skills-row" data-reveal="desc">
+        <article class="skill-card" data-step="1">
+          <h3>Frontend</h3>
+          <div class="skill-body">
+            <div class="skill-tags">
+              <span class="tag">HTML5</span><span class="tag">CSS3</span><span class="tag">JavaScript(ES6+)</span>
+              <span class="tag">React</span><span class="tag">Responsive</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="skill-card" data-step="2">
+          <h3>Backend &amp; DB</h3>
+          <div class="skill-body">
+            <div class="skill-tags">
+              <span class="tag">C#</span><span class="tag">Java</span><span class="tag">Oracle</span>
+              <span class="tag">PL/SQL</span><span class="tag">Git</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="skill-card" data-step="3">
+          <h3>Tooling</h3>
+          <div class="skill-body">
+            <div class="skill-tags">
+              <span class="tag">VS Code</span><span class="tag">GitHub</span>
+              <span class="tag">Chrome DevTools</span><span class="tag">Figma(기초)</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="skill-card" data-step="4">
+          <h3>Soft Skills</h3>
+          <div class="skill-body">
+            <div class="skill-tags">
+              <span class="tag">문제 해결</span><span class="tag">협업</span>
+              <span class="tag">커뮤니케이션</span><span class="tag">빠른 적응</span>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section id="projects" class="panel section section-projects" aria-labelledby="projects-title" data-theme="purple">
+      <div class="projects-wrap">
+        <div class="projects-text">
+          <h2 id="projects-title" class="section-title" data-reveal="title">Projects</h2>
+          <p class="lead" data-reveal="desc">최근 작업 일부를 미리보기로 보여드립니다. 더 보시려면 아래 버튼을 눌러주세요.</p>
+          <button class="btn_01 see-all-btn" id="btn-see-all" data-reveal="subtitle">자세히 보기</button>
+        </div>
+
+        <div class="project-preview" id="project-preview" data-reveal="title" aria-label="최신 프로젝트 미리보기">
+          <div class="thumb"></div>
+          <div class="caption">
+            <h3>랜딩페이지 제작</h3>
+            <p>반응형 · 모던 UI · 다크모드</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="panel section section-contact" aria-labelledby="contact-title" data-theme="pink" data-steps="4">
+      <div class="contact-wrap">
+        <div class="contact-left">
+          <h2 id="contact-title" class="section-title" data-reveal="title">Contact</h2>
+          <p class="lead" data-reveal="desc">“The only way to do great work is to love what you do.” — S. Jobs</p>
+          <div class="contact-list" data-reveal="subtitle" style="margin-top:16px;">
+            <a href="mailto:wns7534@naver.com"><i class="fa-regular fa-envelope"></i> wns7534@naver.com</a>
+            <a href="https://github.com/wannasing-tj" target="_blank" rel="noopener"><i class="fab fa-github"></i> GitHub</a>
+            <a href="https://velog.io/@wns7534/posts" target="_blank" rel="noopener"><i class="fa-solid fa-blog"></i> Velog</a>
+          </div>
+        </div>
+
+        <div class="bands" aria-hidden="true">
+          <div class="band band--green"></div>
+          <div class="band band--navy"></div>
+          <div class="band band--yellow"></div>
+          <div class="band band--brown"></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Projects Overlay -->
+  <div id="projects-overlay" aria-hidden="true">
+    <div class="overlay-inner" role="dialog" aria-modal="true" aria-labelledby="ov-title">
+      <div class="overlay-top">
+        <h3 id="ov-title">모든 프로젝트</h3>
+        <div class="filters" role="tablist" aria-label="프로젝트 필터">
+          <button class="chip is-active" data-filter="all" role="tab" aria-selected="true">All</button>
+          <button class="chip" data-filter="team" role="tab">Team</button>
+          <button class="chip" data-filter="single" role="tab">Single</button>
+        </div>
+        <button id="btn-ov-back" class="btn_02 back-btn" aria-label="뒤로가기"><i class="fa-solid fa-arrow-left"></i> 뒤로가기</button>
+      </div>
+
+      <div class="ov-grid" data-scrollable>
+        <article class="ov-card" data-cat="team">
+          <div class="ov-thumb"></div>
+          <h4>사랑의 자판기 키오스크</h4>
+          <p>사원 바코드 기반 음료 구매 UI/로직, 입출고·재고 연동</p>
+          <div class="skill-tags"><span class="tag">C#</span><span class="tag">DevExpress</span><span class="tag">PL/SQL</span></div>
+        </article>
+        <article class="ov-card" data-cat="team">
+          <div class="ov-thumb"></div>
+          <h4>휴대폰마스터 관리화면</h4>
+          <p>조건조회/저장, GET/PUT 프로시저 연동</p>
+          <div class="skill-tags"><span class="tag">C#</span><span class="tag">Oracle</span></div>
+        </article>
+        <article class="ov-card" data-cat="single">
+          <div class="ov-thumb"></div>
+          <h4>랜딩페이지 제작</h4>
+          <p>모던 히어로/카드 그리드/다크모드</p>
+          <div class="skill-tags"><span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">JS</span></div>
+        </article>
+      </div>
     </div>
-  </header>
+  </div>
 
-  <!-- PROFILE -->
-  <section id="profile" class="section" aria-labelledby="profile-title">
-    <h2 id="profile-title">Profile</h2>
-    <div class="grid" style="margin-top:18px;">
-      <article class="card col-6">
-        <img class="avatar" src="img/self.jpg" alt="프로필 이미지"/>
-        <h3>권태준</h3>
-        <div class="meta">
-          <span><i class="fa-solid fa-location-dot"></i> 대구, 대한민국</span>
-          <span><i class="fa-regular fa-envelope"></i> wns7534@naver.com</span>
-          <span><i class="fab fa-github"></i> <a href="https://github.com/wannasing-tj" target="_blank" rel="noopener">GitHub</a></span>
-          <span><i class="fa-solid fa-blog"></i> <a href="https://velog.io/@wns7534/posts" target="_blank" rel="noopener">Velog</a></span>
-        </div>
-        <p style="margin-top:8px;">
-          직관적인 UI와 안정적인 로직을 지향하는 웹 개발자입니다. 사용자 여정을 기준으로 문제를 정의하고,
-          가볍고 확장 가능한 코드를 추구합니다.
-        </p>
-      </article>
+  <!-- 하단 챕터 진행 바 -->
+  <div id="chapter-rail" aria-label="챕터 진행바"></div>
 
-      <article class="card col-6">
-        <h3>한 줄 소개</h3>
-        <p>프론트엔드 중심 풀스택 지향. React · TypeScript 학습/프로젝트 진행 중.</p>
-        <h3 style="margin-top:16px;">관심 분야</h3>
-        <div class="skill-tags">
-          <span class="tag">UI/UX</span>
-          <span class="tag">React</span>
-          <span class="tag">TypeScript</span>
-          <span class="tag">DevOps 기초</span>
-          <span class="tag">데이터 시각화</span>
-        </div>
-      </article>
-    </div>
-  </section>
-
-  <!-- SKILLS -->
-  <section id="skills" class="section" aria-labelledby="skills-title">
-    <h2 id="skills-title">Skills</h2>
-
-    <div class="grid" style="margin-top:18px;">
-      <article class="card col-6">
-        <h3>Frontend</h3>
-        <div class="skill-tags">
-          <span class="tag">HTML5</span>
-          <span class="tag">CSS3</span>
-          <span class="tag">JavaScript(ES6+)</span>
-          <span class="tag">React</span>
-          <span class="tag">Responsive</span>
-        </div>
-        <p style="margin-top:10px;">숙련도</p>
-        <div class="skill-bar" title="Frontend 70%">
-          <span style="width:70%"></span>
-        </div>
-      </article>
-
-      <article class="card col-6">
-        <h3>Backend & DB</h3>
-        <div class="skill-tags">
-          <span class="tag">C#</span>
-          <span class="tag">Java</span>
-          <span class="tag">Oracle</span>
-          <span class="tag">PL/SQL</span>
-          <span class="tag">Git</span>
-        </div>
-        <p style="margin-top:10px;">숙련도</p>
-        <div class="skill-bar" title="Backend 50%">
-          <span style="width:50%"></span>
-        </div>
-      </article>
-
-      <article class="card col-6">
-        <h3>Tooling</h3>
-        <div class="skill-tags">
-          <span class="tag">VS Code</span>
-          <span class="tag">GitHub</span>
-          <span class="tag">Chrome DevTools</span>
-          <span class="tag">Figma(기초)</span>
-        </div>
-      </article>
-
-      <article class="card col-6">
-        <h3>Soft Skills</h3>
-        <div class="skill-tags">
-          <span class="tag">문제 해결</span>
-          <span class="tag">협업</span>
-          <span class="tag">커뮤니케이션</span>
-          <span class="tag">빠른 적응</span>
-        </div>
-      </article>
-    </div>
-  </section>
-
-  <!-- PROJECTS -->
-  <section id="projects" class="section" aria-labelledby="projects-title">
-    <h2 id="projects-title">Projects</h2>
-
-    <div class="projects" style="margin-top:18px;">
-      <article class="project">
-        <div class="thumb">썸네일(16:9)</div>
-        <h3>사랑의 자판기 키오스크 (WinForms · DevExpress)</h3>
-        <p>사원 바코드 기반 음료 구매 UI/로직 구현. 입출고·재고 연동, 파일 실시간 반영.</p>
-        <div class="skill-tags">
-          <span class="tag">C#</span>
-          <span class="tag">DevExpress</span>
-          <span class="tag">PL/SQL</span>
-        </div>
-        <div class="links">
-          <a href="#" target="_blank" rel="noopener"><i class="fa-regular fa-file"></i> 상세보기</a>
-          <a href="#" target="_blank" rel="noopener"><i class="fab fa-github"></i> 코드</a>
-        </div>
-      </article>
-
-      <article class="project">
-        <div class="thumb">썸네일(16:9)</div>
-        <h3>포트폴리오 랜딩 페이지 (반응형)</h3>
-        <p>최근 트렌드 반영한 Hero · 카드형 프로젝트 그리드, 다크모드 대응.</p>
-        <div class="skill-tags">
-          <span class="tag">HTML</span>
-          <span class="tag">CSS</span>
-          <span class="tag">JS</span>
-        </div>
-        <div class="links">
-          <a href="#" target="_blank" rel="noopener"><i class="fa-solid fa-up-right-from-square"></i> Demo</a>
-          <a href="#" target="_blank" rel="noopener"><i class="fab fa-github"></i> 코드</a>
-        </div>
-      </article>
-
-      <article class="project">
-        <div class="thumb">썸네일(16:9)</div>
-        <h3>휴대폰 마스터 관리 화면</h3>
-        <p>SearchLookUpEdit 기반 조건 조회/저장. GET/PUT 프로시저 연동.</p>
-        <div class="skill-tags">
-          <span class="tag">C#</span>
-          <span class="tag">Oracle</span>
-          <span class="tag">DevExpress</span>
-        </div>
-        <div class="links">
-          <a href="#" target="_blank" rel="noopener"><i class="fa-regular fa-file"></i> 상세보기</a>
-        </div>
-      </article>
-    </div>
-  </section>
-
-  <!-- CONTACT -->
-  <section id="contact" class="section" aria-labelledby="contact-title">
-    <h2 id="contact-title">Contact</h2>
-    <div class="grid" style="margin-top:18px;">
-      <article class="card col-6">
-        <h3>연락처</h3>
-        <div class="contact-list" style="margin-top:10px;">
-          <a href="mailto:wns7534@naver.com">
-            <i class="fa-regular fa-envelope"></i> wns7534@naver.com
-          </a>
-          <a href="https://github.com/wannasing-tj" target="_blank" rel="noopener">
-            <i class="fab fa-github"></i> GitHub
-          </a>
-          <a href="https://velog.io/@wns7534/posts" target="_blank" rel="noopener">
-            <i class="fa-solid fa-blog"></i> Velog
-          </a>
-        </div>
-      </article>
-
-      <article class="card col-6">
-        <h3>한마디</h3>
-        <p style="margin-top:8px;">
-          사용자 경험을 해치지 않는 성능 최적화와 깔끔한 UI를 고민합니다.
-          함께 일할 팀을 기다리고 있습니다.
-        </p>
-      </article>
-    </div>
-  </section>
-
-  <!-- FOOTER -->
-  <footer role="contentinfo">
-    <div>
-      <p>© 2025 권태준 포트폴리오</p>
-    </div>
-    <div class="footer-icons">
-      <a href="https://github.com/wannasing-tj" target="_blank" rel="noopener"
-        ><i class="fab fa-github"></i
-      ></a>
-      <a href="https://velog.io/@wns7534/posts" target="_blank" rel="noopener"
-        ><i class="fa-solid fa-blog"></i
-      ></a>
-    </div>
-  </footer>
-
-  <!-- 스냅/내비 스크립트 -->
   <script src="js/main.js" defer></script>
 </body>
 </html>
